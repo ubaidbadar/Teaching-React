@@ -1,8 +1,11 @@
+import Portal from "./Components/Portal/Portal/Portal";
+
+
 function App() {
   return (
-    <div >
-      
-
+    <div>
+      <Portal children="baby"/>
+      jkl
     </div>
   )
 }
