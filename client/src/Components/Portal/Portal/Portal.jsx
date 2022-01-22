@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 
-const Portal = (props) => {
-    return ReactDOM.createPortal(props.children, document.getElementById('modal-wrapper'));
+const Portal = ({children, id = 'modal-wrapper'}) => {
+    return ReactDOM.createPortal(children, document.getElementById(id));
 };
 
 export default Portal;
