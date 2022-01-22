@@ -1,0 +1,9 @@
+.Alert-Modal-Animation {
+    animation:  0.3s forwards linear ModalOpen;
+}
+
+@media (max-width: 767px) {
+    .Alert-Modal-Animation {
+        animation:  0.3s forwards linear MobileAlertOpen;
+    }
+}

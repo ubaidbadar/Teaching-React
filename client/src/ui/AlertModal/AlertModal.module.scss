@@ -1,0 +1,70 @@
+.root {
+    border-radius: 0.2rem;
+    width: 20rem;
+}
+
+.footer button {
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    background: transparent;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 0.5em 1em;
+    margin: -0.5em;
+    border-radius: 0.2em;
+
+    &:not(:disabled) {
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: currentColor;
+            opacity: 0;
+            border-radius: inherit;
+            z-index: -1;
+        }
+        &:hover::before {
+            opacity: 0.1;
+        }
+        &:active, &.active {
+            &::before {
+                opacity: 0.05;
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 767px) {
+    .root {
+        width: 100%;
+        margin-bottom: 0 !important;
+    }
+    .footer button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0 1.25em;
+        font-weight: 500;
+        border-radius: 0.2em;
+        height: 2.5em;
+        margin: 0;
+        &::after {
+            content: '';
+            border: 0.1em solid;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+        }
+    }
+}
