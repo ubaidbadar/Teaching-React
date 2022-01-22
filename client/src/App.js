@@ -13,6 +13,7 @@ function App() {
 
 
       <Modal
+        type="alert"
         title='Are you sure?'
         component={openHandler => <button onClick={openHandler}>Independent Modal</button>}
         footer={closeHandler => (
