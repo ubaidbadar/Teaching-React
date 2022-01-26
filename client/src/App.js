@@ -2,28 +2,32 @@ import { useState } from "react";
 import Modal from "./ui/Modal/Modal";
 
 function App() {
-  const [isModal, setIsModal] = useState(false)
-  const onDelete = (id, closeHandler) => {
-    closeHandler();
+  // const xyz = (x) => {
+  //   return <div>{x}</div>
+  // }
 
-  }
+  const [isModal, setIsModal] = useState(false);
   return (
     <div style={{ height: '200vh' }}>
-      <button onClick={() => setIsModal(true)}>Open Modal</button>
 
+      {/* {xyz()} */}
+      <button className="btn-primary" onClick={() => setIsModal(true)}>Open Dependant Modal</button>
 
-      <Modal
-        type="alert"
-        title='Are you sure?'
-        component={openHandler => <button onClick={openHandler}>Independent Modal</button>}
-        footer={closeHandler => (
-          <>
-            <button className="tx-danger" onClick={() => onDelete('product_id', closeHandler)}>Yes</button>
-            <button className="tx-grey" onClick={closeHandler}>No</button>
-          </>
-        )}
-        description='Are you really want to delete this item?'
-      />
+      <Modal component={onOpen => <button className="btn-primary" onClick={onOpen}>Open Modal</button>}>
+        This is a independant modal
+        <Modal component={onOpen => <button onClick={onOpen}>Open 2nd Modal</button>}>
+          this is my 2nd modal
+        </Modal>
+      </Modal>
+
+      {/* {isModal && (
+        <Modal isDependant={true}>
+          This is dependant modal
+        </Modal>
+      )} */}
+      <Modal isDependant={isModal} onClose={() => setIsModal(false)}>
+        This is dependant modal
+      </Modal>
 
     </div>
   )

@@ -4,8 +4,6 @@ import styles from './ModalWrapper.module.scss';
 
 const ModalWrapper = ({ children, className, onClose, Root = "div" }) => {
     useModal();
-
-
     return (
         <Portal>
             <div className={`position-fixed start-0 top-0 w-100 h-100 p-md-5 overflow-auto d-flex z-index-6 ${styles.root}`} >
