@@ -1,23 +1,29 @@
 import { useState } from "react";
 import Modal from "./Components/UI/Modal";
+import styles from './App.module.scss';
 
 function App() {
-  const [isModal, setIsModal] = useState(false);
-  const [isDeleteModal, setIsDeleteModal] = useState(false)
-  const closer = () => setIsModal(false);
+  const [message, setMessage] = useState(false);
+  const [theEnd, settheEnd] = useState(false);
+  const [overflow, setoverflow] = useState(false);
+
+  // const closer = () => 
+  // {theEnd && settheEnd(false)};
+  // or?
+  //  {(settheEnd(false) && message) && setMessage(false)};
   return (
     <>
-      <button onClick={() => setIsModal(true)}>Delete</button>
-      {isModal && (
-        <Modal closer={closer}>
-          <button onClick={() => setIsDeleteModal(true)}><i className="material-icons">close</i></button>
-          <h5>Sign In</h5>
-          <input />
+      <button onClick={() => setMessage(true)}>Delete Item</button>
+      {message && (
+        <Modal className={styles.modal} closer={() => setMessage(false)}>
+          To continue browsing you need to accept our TOS!
+          <button onClick={() => settheEnd(true)}>I don't agree</button>
         </Modal>
       )}
-      {isDeleteModal && (
-        <Modal closer={() => setIsDeleteModal(false)}>
-          <div>Deleting</div>
+
+      {(message && theEnd) && (
+        <Modal className={styles.modal} closer={() => settheEnd(false)}>
+          Good Bye!
         </Modal>
       )}
     </>
