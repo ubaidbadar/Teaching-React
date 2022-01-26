@@ -1,17 +1,12 @@
 import ReactDOM from 'react-dom';
 
-
 // const mohsin = {
 //     name: 'Mohsin Shehzad',
 //     department: 'BS',
 //     rollNo: 24,
 //     faculty: 'CS'
 // }
-
 // const {name, department, ...data}
-
-
-
 // mohsin['name']
 // mohsin.name
 
