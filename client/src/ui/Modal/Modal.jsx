@@ -1,28 +1,5 @@
-import { useState } from "react";
-import ModalWrapper from "../../hoc/ModalWrapper/ModalWrapper";
+import withModal from "../../hoc/withModal/withModal"
 
+const Modal = props => props.children;
 
-
-
-const Modal = ({ component, isDependant = false, onClose, ...props }) => {
-
-    const [isModal, setIsModal] = useState(false);
-
-    const onCloseHandler = () => {
-        setIsModal(false);
-        onClose && onClose();
-    }
-    const onOpen = () => {
-        setIsModal(true);
-    }
-
-
-    return (
-        <>
-            {(isModal || isDependant) && <ModalWrapper {...props} onClose={onCloseHandler} />}
-            {component && component(onOpen)}
-        </>
-    )
-}
-
-export default Modal;
+export default withModal(Modal);

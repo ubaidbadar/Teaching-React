@@ -1,4 +1,6 @@
-@import './colors.scss', './colorstyles.scss', './bootstrap.scss', './buttons.scss', './opacity.scss', './z-index.scss', './animation.scss';
+@import './colors.scss', './colorstyles.scss', './bootstrap.scss', 
+'./buttons.scss', './opacity.scss', './z-index.scss', 
+'./animation.scss', './border-radius.scss';
 
 body, html {
     margin: 0;
@@ -13,4 +15,8 @@ body, html {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, b {
+    font-weight: 500;
 }
