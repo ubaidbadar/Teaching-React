@@ -1,0 +1,54 @@
+@import './normal-button.scss', './hover-button.scss', './btn-blank.scss';
+
+.loading {
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 0.12em solid;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    animation: 0.25s infinite linear Loader;
+}
+
+
+.btn-border, .btn-primary {
+    @extend .btn-normal, .btn-hover, .btn-blank;
+}
+.btn-border {
+    &::after {
+        content: '';
+        border: 0.1em solid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+    }
+}
+.btn-primary {
+    background-color: $primary;
+    color: $white;
+}
+
+.btn-icon {
+    @extend .btn-normal, .btn-hover;
+    width: $height;
+    height: $height;
+    border-radius: 50%;
+    &.no-padding {
+        margin: -0.475em;
+    }
+}
+
+.btn-text {
+    @extend .btn-normal;
+    color: $primary;
+    &:hover, &:active, &.active {
+        text-decoration: underline;
+    }
+    &:active {
+        opacity: 0.8;
+    }
+}
