@@ -1,4 +1,84 @@
-@import './normal-button.scss', './hover-button.scss', './btn-blank.scss';
+$height: 2.5em;
+
+.btn-normal {
+    background-color: transparent;
+    padding: 0;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.25em;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    gap: 1em;
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.8;
+    }
+    .material-icons {
+        font-size: 1.5em;
+    }
+}
+
+.btn-normal-parent {
+    >a, >button {
+        @extend .btn-normal;
+    }
+}
+
+.btn-hover {
+    position: relative;
+    z-index: 1;
+    &:not(:disabled) {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: currentColor;
+            opacity: 0;
+            border-radius: inherit;
+            z-index: -1;
+        }
+        &:hover::before {
+            opacity: 0.1;
+        }
+        &:active, &.active {
+            &::before {
+                opacity: 0.05;
+            }
+        }
+    }
+}
+
+.btn-hover-parent {
+    >a, >button {
+        @extend .btn-hover;
+    }
+}
+
+
+
+.btn-blank {
+    padding: 0 1.25em;
+    font-weight: 500;
+    border-radius: 0.2em;
+    height: $height;
+}
+
+.btn-blank-parent {
+    >a, >button {
+        @extend .btn-blank;
+    }
+}
 
 .loading {
     display: inline-flex;
@@ -15,6 +95,7 @@
 .btn-border, .btn-primary {
     @extend .btn-normal, .btn-hover, .btn-blank;
 }
+
 .btn-border {
     &::after {
         content: '';

@@ -1,12 +1,9 @@
-@import '../../scss/hover-button.scss', '../../scss/normal-button.scss', '../../scss/btn-blank.scss';
-
 .root {
     width: 18rem;
 }
 
 .footer {
-    a, button {
-        @extend .btn-normal, .btn-hover, .btn-blank;
+    >a, >button {
         font-size: 0.8rem;
         margin: 0 -0.5rem -0.5rem -0.5rem;
     }
