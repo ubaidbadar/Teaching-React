@@ -1,25 +1,71 @@
-import AlertModal from "./ui/AlertModal/AlertModal";
+import Modal from "./ui/Modal/Modal";
 
-  function App() {
-    return (
-      <div style={{ height: '200vh' }}>
+function App() {
+  return (
+    <div style={{ height: '200vh' }}>
+      <Modal component={openHandler => (
+        <button className="btn-primary" onClick={openHandler}>Open Modal</button>
+      )}>
+        <input style={{width: '200%'}} />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+        <input className="w-100" />
+      </Modal>
 
-        {/* {xyz()} */}
-
-        <AlertModal
-          title='Are you sure?'
-          component={onOpen => <button className="btn-primary bg-danger" onClick={onOpen}>Delete Item</button>}
-          description='You really want to delete this Product?'
-          Footer={props => (
-            <>
-              <button className="tx-primary">Yes</button>
-              <button className="tx-danger" onClick={props.onClose}>No</button>
-            </>
-          )}
-        />
-
-      </div>
-    )
-  }
+    </div>
+  )
+}
 
 export default App;
