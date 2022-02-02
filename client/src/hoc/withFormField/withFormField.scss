@@ -1,0 +1,71 @@
+@import '../../scss/colors.scss';
+
+$transition: linear 0.1s all;
+
+.FormField-Root {
+    cursor: text;
+    color: $grey;
+    transition: $transition;
+    min-height: 2.5em;
+    padding: 0 1rem !important;
+    gap: 0.8rem;
+    border-radius: 0.2em;
+    >.btn-icon {
+        margin: 0 calc(-1rem + 0.15em);
+    }
+    &:not(.FormField-Focus) {
+        .FormField::placeholder {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+}
+
+.FormField {
+    text-transform: initial !important;  
+    letter-spacing: 0; 
+    transition: $transition;
+    min-width: calc(100% + 2rem);
+    margin: 0 -1rem;
+    padding: 0.5rem 1rem !important;
+    resize: none;
+    &::placeholder {
+        transition: $transition;
+        opacity: 0.7;
+    }
+    option {
+        min-height: 200em !important;
+        padding: 2rem !important;
+    }
+}
+
+input, textarea {
+    &.FormField {
+        cursor: text !important;
+    }
+}
+select.FormField {
+    margin: 0 calc(-1rem - 0.27em);
+}
+
+
+.FormField-Label {
+    top: 0.58em;
+    background: $white;
+    padding: 0 0.2em;
+    border-radius: inherit;
+    transition: $transition;
+    // left: -0.2em;
+}
+
+.FormField-Focus {
+    color: $primary;
+}
+
+.FormField-Value, .FormField-Focus {
+    .FormField-Label {
+        top: -0.58em;
+        font-size: 0.75em;
+        font-weight: 500;
+    }
+}

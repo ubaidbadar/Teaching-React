@@ -1,5 +1,21 @@
 $height: 2.5em;
 
+
+.border, .parent-border >a, 
+.parent-border >button, 
+.btn-border {
+    position: relative;
+    &::after {
+        content: '';
+        border: 0.1em solid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+    }
+}
 .btn-normal {
     background-color: transparent;
     padding: 0;
@@ -68,7 +84,7 @@ $height: 2.5em;
 
 
 .btn-blank {
-    padding: 0 1.25em;
+    padding: 0 0.85em;
     font-weight: 500;
     border-radius: 0.2em;
     height: $height;
@@ -96,18 +112,6 @@ $height: 2.5em;
     @extend .btn-normal, .btn-hover, .btn-blank;
 }
 
-.btn-border {
-    &::after {
-        content: '';
-        border: 0.1em solid;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: inherit;
-    }
-}
 .btn-primary {
     background-color: $primary;
     color: $white;
