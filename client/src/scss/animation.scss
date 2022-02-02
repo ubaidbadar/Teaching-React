@@ -18,13 +18,3 @@
         transform: scale(1);
     }
 }
-@keyframes MobileAlertOpen {
-    0% {
-        opacity: 0;
-        visibility: hidden;
-        bottom: -100%;
-    }
-    100% {
-        bottom: 0;
-    }
-}

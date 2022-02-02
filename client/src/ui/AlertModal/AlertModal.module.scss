@@ -1,10 +1,60 @@
 .root {
     width: 18rem;
+    animation: ModalOpen linear 0.3s forwards;
+    border-radius: 0.4rem;
 }
 
 .footer {
     >a, >button {
         font-size: 0.8rem;
         margin: 0 -0.5rem -0.5rem -0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .root {
+        width: 100%;
+        animation: MobileAlertOpen linear 0.3s forwards;
+        border-radius: 0.8rem 0.8rem 0 0;
+    }
+    .footer {
+        >a, button {
+            margin: 0;
+            &::after {
+                content: '';
+                border: 0.1em solid;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: inherit;
+            }
+        }
+    }
+}
+
+@keyframes ModalOpen {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+}
+@keyframes MobileAlertOpen {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        bottom: -100%;
+    }
+    100% {
+        bottom: 0;
+        opacity: 1;
+        visibility: visible;
     }
 }

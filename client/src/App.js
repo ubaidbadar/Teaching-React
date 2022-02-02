@@ -16,12 +16,6 @@ import AlertModal from "./ui/AlertModal/AlertModal";
               <button className="tx-danger" onClick={props.onClose}>No</button>
             </>
           )}
-          footer={onClose => (
-            <>
-              <button>Yes</button>
-              <button onClick={onClose}>No</button>
-            </>
-          )}
         />
 
       </div>
